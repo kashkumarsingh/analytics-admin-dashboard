@@ -1,2 +1,36 @@
+/**
+-BS Functions
+-BS Mixins
+-Framework sass variables
+-Bootstrap Variables
+-Framework Map amends
+-Framework Mixins
+-Framework Utitlies
+-Boostrap Core
+-Framework custom properies (CSS Variables)
+-Framework Base
+-Framework Components
+-Framework Vendors
+*/
+// Bootstrap fuctions - Do not change anything in here
+@import '~bootstrap/scss/functions';
+// Bootstrap mixins - Do not change anything in here
+@import '~bootstrap/scss/mixins';
+//Framework sass variables
+@import 'abstracts/sass-variables';
+//Bootstrap SASS Vars - Do not change anything in here
+@import '~bootstrap/scss/variables';
 //Bootstrap Core
 @import '~bootstrap/scss/bootstrap';
+// Framework Custom Properties (CSS Variables)
+@import 'abstracts/css-vars';
+// Framework base
+@import 'base/base';
+// Framework Components
+@import 'components/components';
+// Framework Layout
+@import 'layout/layouts';
+// Framework Pages
+@import 'pages/pages';
+// Framework Vendor Overrides
+@import 'vendors/vendors';
