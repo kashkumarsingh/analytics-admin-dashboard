@@ -1,0 +1,17 @@
+{
+  "name": "analytics-admin-dashboard",
+  "version": "1.0.0",
+  "description": "Analytics Admin Dashboard - A web application for monitoring and analyzing website analytics data.",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["analytics", "dashboard", "web application"],
+  "author": "Kashkumar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kashkumarsingh/analytics-admin-dashboard.git"
+  }
+}
