@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open",
+    "start": "webpack serve",
     "build": "del-cli dist && webpack --mode production"
   },
   "keywords": [
@@ -38,6 +38,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.8",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
     "@babel/preset-env": "^7.22.7",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.3",

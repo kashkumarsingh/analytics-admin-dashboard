@@ -1,0 +1,63 @@
+// Font families
+$font-family-primary: 'Popins', sans-serif;
+$font-family-secondary: 'Open Sans', sans-serif;
+
+// Font sizes
+$font-size-extra-small: 12px;
+$font-size-small: 14px;
+$font-size-medium: 16px;
+$font-size-large: 24px;
+$font-size-extra-large: 30px;
+
+// Line heights
+$line-height-small: 1.2;
+$line-height-medium: 1.4;
+$line-height-large: 1.6;
+
+// Font weights
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// Heading styles
+// h1 {
+//   font-size: $font-size-large;
+//   line-height: $line-height-large;
+//   font-weight: $font-weight-bold;
+// }
+
+// h2 {
+//   font-size: $font-size-medium;
+//   line-height: $line-height-medium;
+//   font-weight: $font-weight-bold;
+// }
+
+// h3 {
+//   font-size: $font-size-medium;
+//   line-height: $line-height-medium;
+//   font-weight: $font-weight-normal;
+// }
+
+// h4 {
+//   font-size: $font-size-medium;
+//   line-height: $line-height-medium;
+//   font-weight: $font-weight-normal;
+// }
+
+// h5 {
+//   font-size: $font-size-medium;
+//   line-height: $line-height-medium;
+//   font-weight: $font-weight-normal;
+// }
+
+// h6 {
+//   font-size: $font-size-medium;
+//   line-height: $line-height-medium;
+//   font-weight: $font-weight-normal;
+// }
+
+// Body text styles
+p {
+  font-size: $font-size-medium;
+  line-height: $line-height-medium;
+  font-weight: $font-weight-normal;
+}

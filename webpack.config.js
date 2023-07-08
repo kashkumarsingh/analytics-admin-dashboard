@@ -58,7 +58,13 @@ const wPackConfig = {
     ],
     port: 3000,
     open: true,
+    client: {
+        overlay: true,
+        progress: true,
+        webSocketTransport: 'ws',
+      },
     hot: true,
+    liveReload:false,
     compress: true,
     historyApiFallback: true,
   },
@@ -85,8 +91,21 @@ const wPackConfig = {
           },
         ],
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
     ],
   },
+  //   externals: {
+  //     jquery: "jQuery",
+  //   },
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -119,6 +138,10 @@ const wPackConfig = {
     ],
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+    }),
     new webpack.ProgressPlugin(),
     new CopyPlugin({
       patterns: [
