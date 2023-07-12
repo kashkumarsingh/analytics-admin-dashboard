@@ -1,0 +1,137 @@
+<nav class="site-navigation navbar navbar-expand-lg justify-content-between">
+   <ul class="list-inline list-unstyled mg-r-20">
+      <!-- Mobile Toggle and Logo -->
+      <li class="list-inline-item align-text-top"><a class="hidden-md hidden-lg" href="#" id="sidebar-toggle-button"><i
+               class="fas fa-bars"></i></a></li>
+      <!-- PC Toggle and Logo -->
+      <li class="list-inline-item align-text-top"><a class="hidden-xs hidden-sm" href="#"
+            id="collapsed-sidebar-toggle-button"><i class="fas fa-bars"></i></a></li>
+   </ul>
+   <!--================================-->
+   <!--/ Brand and Logo End -->
+   <!--================================-->
+   <!-- Header Right Start -->
+   <!--================================-->
+   <div class="header-right d-flex">
+      <ul class="list-inline justify-content-end d-flex align-items-center justify-content-center">
+         <li class="list-inline-item align-middle"><a href="#" id="search-button">
+             <span class="fas fa-search"></span>
+         </a></li>
+         <!--================================-->
+         <!-- Languages Dropdown Start -->
+         <!--================================-->
+         <li class="list-inline-item align-middle dropdown hidden-xs">
+            <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <span class="fi fi-gb fis"></span>
+            </a>
+            <ul class="dropdown-menu languages-dropdown shadow-2">
+               <li>
+                  <a href="" data-lang="en"><i class="fi fi-gb fis mr-2"></i><span>English-US</span></a>
+               </li>
+               <li>
+                  <a href="" data-lang="es"><i class="fi fi-us fis mr-2"></i><span>Spanish</span></a>
+               </li>
+               <li>
+                  <a href="" data-lang="fr"><i class="fi fi-fr fis mr-2"></i><span>French</span></a>
+               </li>
+               <li>
+                  <a href="" data-lang="gr"><i class="fi fi-de fis mr-2"></i><span>German</span></a>
+               </li>
+               <li>
+                  <a href="" data-lang="ru"><i class="fi fi-ru fis mr-2"></i><span>Russian</span></a>
+               </li>
+               <li>
+                  <a href="" data-lang="ru"><i class="fi fi-es fis mr-2"></i><span>English-UK</span></a>
+               </li>
+            </ul>
+         </li>
+         <!--/ Languages Dropdown End -->
+         <!--================================-->
+         <!-- Notifications Dropdown Start -->
+         <!--================================-->
+         <li class="list-inline-item dropdown hidden-xs">
+            <a class="notification-icon" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <i class="far fa-bell"></i>
+               <span class="notification-count wave in"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow-2">
+               <!-- Top Notifications Area -->
+               <div class="top-notifications-area">
+                  <!-- Heading -->
+                  <div class="notifications-heading">
+                     <div class="heading-title">
+                        <h6>Notifications</h6>
+                     </div>
+                     <span>5+ New Notifications</span>
+                  </div>
+                  <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 260px;">
+                     <div class="notifications-box" id="notificationsBox"
+                        style="overflow: hidden; width: auto; height: 260px;">
+                        {{#each notifications.entries}}
+                        <a class="dropdown-item list-group-item" href="javascript:void(0)">
+                           <div class="d-flex justify-content-between">
+                              <div
+                                 class="wd-45 ht-38 mg-r-15 d-flex align-items-center justify-content-center rounded-circle card-icon-success">
+                                 <i class="{{icon}}"></i>
+                              </div>
+                              <div>
+                                 <span>{{title}}</span>
+                                 <span class="small tx-gray-600 ft-right">{{date}}</span>
+                                 <div class="tx-gray-600 tx-11">{{description}}</div>
+                              </div>
+                           </div>
+                        </a>
+                        {{/each}}
+                     </div>
+                     <div class="slimScrollBar"
+                        style="background: rgb(165, 167, 171); width: 2px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 50px; z-index: 99; right: 0px;">
+                     </div>
+                     <div class="slimScrollRail"
+                        style="width: 2px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 50px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 0px;">
+                     </div>
+                  </div>
+                  <div class="notifications-footer">
+                     <a href="#">View all Notifications</a>
+                  </div>
+               </div>
+            </div>
+         </li>
+         <!--/ Notifications Dropdown End -->
+         <!--================================-->
+         <!-- Profile Dropdown Start -->
+         <!--================================-->
+         <li class="list-inline-item dropdown profile-dropdown">
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+               <img src="assets/images/avatar/avatar1.png" class="img-fluid wd-35 ht-35 rounded-circle"
+                  alt="user profile">
+               <span class="select-profile">Welcome John!</span>
+
+            </a>
+            <div class="dropdown-menu  dropdown-profile shadow-2">
+               <div class="user-profile-area">
+                  <div class="user-profile-heading">
+                     <div class="profile-thumbnail">
+                        <img src="assets/images/avatar/avatar1.png" class="img-fluid wd-35 ht-35 rounded-circle" alt="">
+                     </div>
+                     <div class="profile-text">
+                        <h6>John Deo</h6>
+                        <span>email@example.com</span>
+                     </div>
+                  </div>
+                  <a href="" class="dropdown-item"><i class="icon-user" aria-hidden="true"></i> My
+                     profile</a>
+                  <a href="" class="dropdown-item"><i class="icon-envelope" aria-hidden="true"></i> Messages
+                     <span class="badge badge-success ft-right mg-t-3">10+</span></a>
+                  <a href="" class="dropdown-item"><i class="icon-settings" aria-hidden="true"></i>
+                     settings</a>
+                  <a href="page-singin.html" class="dropdown-item"><i class="icon-power" aria-hidden="true"></i>
+                     Sign-out</a>
+               </div>
+            </div>
+         </li>
+         <!-- Profile Dropdown End -->
+         <!--================================-->
+      </ul>
+   </div>
+   <!--/ Header Right End -->
+</nav>

@@ -1,0 +1,28 @@
+{
+  "entries": [
+    {
+      "title": "New Users",
+      "count": "50,350",
+      "percentage": "+535%",
+      "description": "avg. per month",
+      "icon": "fas fa-arrow-up",
+      "isPositivePercentage": true
+    },
+    {
+      "title": "Sales",
+      "count": "12,500",
+      "percentage": "-12%",
+      "description": "avg. per month",
+      "icon": "fas fa-arrow-down",
+      "isPositivePercentage": false
+    },
+    {
+      "title": "Website Visits",
+      "count": "98,765",
+      "percentage": "+102%",
+      "description": "avg. per month",
+      "icon": "fas fa-arrow-up",
+      "isPositivePercentage": true
+    }
+  ]
+}

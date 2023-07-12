@@ -64,7 +64,7 @@ const wPackConfig = {
         webSocketTransport: 'ws',
       },
     hot: true,
-    liveReload:false,
+    liveReload:true,
     compress: true,
     historyApiFallback: true,
   },

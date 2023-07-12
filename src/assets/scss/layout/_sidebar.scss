@@ -1,0 +1,87 @@
+.page-sidebar {
+    font-weight: 400;
+    width: 250px;
+    background: #fff;
+    min-height: 100%;
+    height: 100vh;
+    float: left;
+    z-index: 100;
+    position: relative;
+    border-right: 1px solid rgba(230, 230, 230, 0.7);
+    -webkit-box-shadow: 0 3px 15px rgba(0, 0, 0, .05);
+    -moz-box-shadow: 0 3px 15px rgba(0, 0, 0, .05);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, .05);
+
+    .logo {
+        width: 250px;
+        background-color: #fff;
+        text-align: center;
+        height: 60px;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-transition: .3s ease;
+        transition: .3s ease;
+        padding: 0 15px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border-right: 1px solid rgba(230, 230, 230, 0.7);
+        border-bottom: 1px solid rgba(230, 230, 230, 0.7);
+        
+
+        #sidebar-toggle-button-close {
+            display: none;
+        }
+
+        .logo-img {
+            .small-logo {
+                display: none;
+                max-height: 28px;
+            }
+        }
+    }
+}
+
+
+.page-sidebar {
+    .page-sidebar-inner {
+        .page-sidebar-menu {
+            margin: 10px 0;
+
+            ul {
+                li {
+                    a {
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 400;
+                        font-size: 13px;
+                        display: block;
+                        padding: 10px 15px;
+                        color: #1b2e4b;
+                        line-height: 1.5 !important;
+                        -webkit-font-smoothing: antialiased;
+                        position: relative;
+                        text-transform: capitalize;
+                    }
+
+                    &.active,
+                    &.open {
+                        border-left: 3px solid #5d78ff;
+                        -webkit-transition: all .3s;
+                        -moz-transition: all .3s;
+                        -o-transition: all .3s;
+                        transition: all .3s;
+
+                        a {
+                            color: #5d78ff;
+                            position: relative;
+                            background: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

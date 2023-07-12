@@ -1,0 +1,627 @@
+  <!-- Heading with Breadcrumb -->
+  <div class="pageheader d-flex justify-content-between align-items-center pd-t-25 pd-b-35">
+    <div class="pageheader-left">
+       <div class="pd-t-5 pd-b-5">
+          <h1 class="pd-0 mg-0 tx-20">Welcome to Home Analytics !</h1>
+       </div>
+       <!-- <div class="breadcrumb pd-0 mg-0">
+          <a class="breadcrumb-item" href="index.html"><i class="icon ion-ios-home-outline"></i> Home</a>
+          <span class="breadcrumb-item active"><i class="icon ion-ios-home-outline"></i> Home</span>
+       </div> -->
+    </div>
+    <div class="pageheader-right dropdown">
+       <button class="btn btn-primary dropdown-toggle reports-dropdown" type="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Download Reports
+       </button>
+       <ul class="dropdown-menu report-download-menu dropdown-menu-dark">
+          <li><a class="dropdown-item" href="#">Download CSV Format</a></li>
+          <li><a class="dropdown-item" href="#">Download PDF Format</a></li>
+       </ul>
+    </div>
+ </div>
+ <!-- Heading with Breadcrumb end -->
+ <!-- Metrics Chart Start -->
+ <div class="metrics-chart wrapper">
+    <div class="row row-xs clearfix">
+       <div class="col-lg-12 col-xl-8 col-12">
+          <div class="card mg-b-20">
+             <div class="card-header">
+                <h4 class="card-header-title">
+                   User Engagement
+                </h4>
+                <div class="card-header-btn">
+                   <a href="#" data-bs-toggle="collapse" class="btn card-collapse"
+                      data-bs-target="#audienceMetrics" aria-expanded="true"><i
+                         class="ion-ios-arrow-down"></i></a>
+                </div>
+             </div>
+             <div class="collapse show" id="audienceMetrics">
+                <div class="card-body pd-t-0 pd-b-20 audienceMetrics-card">
+                   <div class="row row-xs clearfix">
+                     {{#each audienceMetrics.entries}}
+                      <div class="col-lg-4 col-md-4 col-sm-12 pd-y-15 d-flex align-items-center justify-content-center single-metrics">
+                         <div class="wd-10 ht-10 rounded-circle bd bd-3 bd-info mg-r-10"></div>
+                         <div class="single-metrics-info">
+                            <span class="tx-uppercase tx-10 mg-b-10 top-title">{{title}}</span>
+                            <h3 class="tx-20 tx-sm-18 tx-md-24 mg-b-0 tx-normal tx-rubik tx-dark counter"><span
+                                  class="counter">{{count}}</span></h3>
+                            <div class="tx-11 d-flex tx-gray-500 percentage"><span
+                                  class="{{#if isPositivePercentage}}text-success{{else}}text-danger{{/if}} mr-2 d-flex align-items-center"><i
+                                     class="{{icon}}"></i>{{percentage}}</span> {{description}}
+                            </div>
+                         </div>
+                      </div>
+                      {{/each}}
+                   </div>
+                   <div class="d-block clearfix">
+                      <div id="audienceOverviewBar" style="height: 300px"></div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="col-xl-4 mg-t-10 mg-lg-t-0">
+          <div class="card mg-b-20">
+             <div class="card-header">
+                <h4 class="card-header-title">
+                   Sessions By Channel
+                </h4>
+                <div class="card-header-btn">
+                   <a href="" data-bs-toggle="collapse" class="btn card-collapse"
+                      data-bs-target="#sessionsChannel" aria-expanded="true"><i
+                         class="ion-ios-arrow-down"></i></a>
+                </div>
+             </div>
+             <div class="card-body collapse show" id="sessionsChannel">
+                <div class="clearfix">
+                   <div id="sessionsDeviceDonut" style="height: 220px"></div>
+                </div>
+                <div class="row">
+                   <div class="col-sm-12 col-md-6 col-xl-12 mg-t-40">
+                      <div class="d-flex justify-content-between">
+                         <h6 class="tx-uppercase tx-10 mg-b-0 tx-gray-500">New Users</h6>
+                         <span class="tx-10 tx-gray-500">65% goal reached</span>
+                      </div>
+                      <div class="d-flex align-items-end justify-content-between mg-b-5">
+                         <h5 class="mg-b-0 tx-dark tx-rubik tx-normal"><span class="counter">3,860</span>
+                         </h5>
+                         <div class="d-flex align-items-center tx-gray-600"><span
+                               class="small text-success mr-2 d-flex align-items-center"><i
+                                  class="ion-android-arrow-up mr-1"></i>+351</span></div>
+                      </div>
+                      <div class="progress ht-3 mg-b-0 op-5">
+                         <div class="progress-bar bg-teal wd-70p" role="progressbar" aria-valuenow="70"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                   </div>
+                   <div class="col-sm-12 col-md-6 col-xl-12 mg-t-40">
+                      <div class="d-flex justify-content-between">
+                         <h6 class="tx-uppercase tx-10 mg-b-0 tx-gray-500">Page Views</h6>
+                         <span class="tx-10 tx-gray-500">65% goal reached</span>
+                      </div>
+                      <div class="d-flex align-items-end justify-content-between mg-b-5">
+                         <h5 class="mg-b-0 tx-dark tx-rubik tx-normal"><span class="counter">64,530</span>
+                         </h5>
+                         <div class="d-flex align-items-center tx-gray-600"><span
+                               class="small text-success mr-2 d-flex align-items-center"><i
+                                  class="ion-android-arrow-up mr-1"></i>+425</span></div>
+                      </div>
+                      <div class="progress ht-3 mg-b-0 op-5">
+                         <div class="progress-bar bg-danger wd-80p" role="progressbar" aria-valuenow="80"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                   </div>
+                   <div class="col-sm-12 col-md-6 col-xl-12 mg-t-40">
+                      <div class="d-flex justify-content-between">
+                         <h6 class="tx-uppercase tx-10 mg-b-0 tx-gray-500">Page Seasion</h6>
+                         <span class="tx-10 tx-gray-500">65% goal reached</span>
+                      </div>
+                      <div class="d-flex align-items-end justify-content-between mg-b-5">
+                         <h5 class="mg-b-0 tx-dark tx-rubik tx-normal"><span class="counter">49.38</span>%
+                         </h5>
+                         <div class="d-flex align-items-center tx-gray-600"><span
+                               class="small text-danger mr-2 d-flex align-items-center"><i
+                                  class="ion-android-arrow-down mr-1"></i>-211</span></div>
+                      </div>
+                      <div class="progress ht-3 mg-b-0 op-5">
+                         <div class="progress-bar bg-warning wd-70p" role="progressbar" aria-valuenow="70"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                   </div>
+                   <div class="col-sm-12 col-md-6 col-xl-12 mg-t-40">
+                      <div class="d-flex justify-content-between">
+                         <h6 class="tx-uppercase tx-10 mg-b-0 tx-gray-500">Bounce Rate</h6>
+                         <span class="tx-10 tx-gray-500">65% goal reached</span>
+                      </div>
+                      <div class="d-flex align-items-end justify-content-between mg-b-5">
+                         <h5 class="mg-b-0 tx-dark tx-rubik tx-normal"><span class="counter">45.90</span>%
+                         </h5>
+                         <div class="d-flex align-items-center tx-gray-600"><span
+                               class="small text-success mr-2 d-flex align-items-center"><i
+                                  class="ion-android-arrow-up mr-1"></i>+151</span></div>
+                      </div>
+                      <div class="progress ht-3 mg-b-0 op-5">
+                         <div class="progress-bar bg-primary wd-65p" role="progressbar" aria-valuenow="65"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <!-- Metrics chart End -->
+ <!-- Behavior and conversions Start -->
+ <div class="charts-wrapper">
+    <div class="row row-xs clearfix">
+       <div class="col-xl-6">
+          <div class="card mg-b-20 website-interaction-metrics">
+             <div class="card-body">
+                <h6 class="tx-dark tx-uppercase mg-b-10 tx-16 tx-semibold tx-spacing-1">Website
+                   Interaction Metrics</h6>
+                <p class="tx-12 mb-2 tx-gray-600">Track user behavior and engagement to gain valuable
+                   insights for improving your website. <a href="#">Learn More</a></p>
+                <div class="row">
+                   <div class="col-sm-4 d-sm-flex align-items-center">
+                      <div class="media single-user-metrics">
+                         <div
+                            class="wd-45 wd-md-50 ht-45 ht-md-50 card-icon-primary mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded">
+                            <i class="ion-ios-pulse-strong tx-primary tx-20"></i>
+                         </div>
+                         <div>
+                            <span class="tx-uppercase tx-10 tx-gray-500">Click Through</span>
+                            <h4 class="tx-dark tx-20 mg-b-0 tx-rubik tx-normal"><span
+                                  class="counter">8,338</span></h4>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-sm-4 d-sm-flex align-items-center">
+                      <div class="media single-user-metrics">
+                         <div
+                            class="wd-45 wd-md-50 ht-45 ht-md-50 card-icon-danger mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded">
+                            <i class="ion-ios-pulse-strong tx-danger tx-20"></i>
+                         </div>
+                         <div>
+                            <span class="tx-uppercase tx-10 tx-gray-500">Bounce Rate</span>
+                            <h4 class="tx-dark tx-20 mg-b-0 tx-rubik tx-normal"><span
+                                  class="counter">49.38</span><small class="tx-15">%</small></h4>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-sm-4 d-sm-flex align-items-center">
+                      <div class="media single-user-metrics">
+                         <div
+                            class="wd-45 wd-md-50 ht-45 ht-md-50 card-icon-warning mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded">
+                            <i class="ion-ios-pulse-strong tx-warning tx-20"></i>
+                         </div>
+                         <div>
+                            <span class="tx-uppercase tx-10 tx-gray-500">Avg. Seasion</span>
+                            <h4 class="tx-dark tx-20 mg-b-0 tx-rubik tx-normal"><span
+                                  class="counter">8,338</span></h4>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-12">
+                      <div class="clearfix">
+                         <div id="behaviorAreaChart"></div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="col-xl-6">
+          <div class="card mg-b-20 conversion-success">
+             <div class="card-body">
+                <h6 class="tx-dark tx-uppercase mg-b-10 tx-16 tx-semibold tx-spacing-1">Conversion Success
+                </h6>
+                <p class="tx-12 mb-2 tx-gray-600">Measure the effectiveness of your website in achieving
+                   desired actions, such as purchases, form submissions, or sign-ups. <a href="#">Learn
+                      More</a></p>
+                <div class="row">
+                   <div class="col-sm-4 d-sm-flex align-items-center">
+                      <div class="media mg-t-20 d-flex align-items-center justify-content-center single-conversion">
+                         <div
+                            class="wd-45 wd-md-50 ht-45 ht-md-50 card-icon-primary mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded">
+                            <i class="ion-ios-pulse-strong tx-primary tx-20"></i>
+                         </div>
+                         <div>
+                            <span class="tx-uppercase tx-10 tx-gray-500">Transactions</span>
+                            <h4 class="tx-dark tx-20 mg-b-0 tx-rubik tx-normal">$ <span
+                                  class="counter">45,938</span></h4>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-sm-4 d-sm-flex align-items-center">
+                      <div class="media mg-t-20 d-flex align-items-center justify-content-center single-conversion">
+                         <div
+                            class="wd-45 wd-md-50 ht-45 ht-md-50 card-icon-warning mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded">
+                            <i class="ion-ios-pulse-strong tx-warning tx-20"></i>
+                         </div>
+                         <div>
+                            <span class="tx-uppercase tx-10 tx-gray-500">Revenue</span>
+                            <h4 class="tx-dark tx-20 mg-b-0 tx-rubik tx-normal">$<span class="counter">
+                                  5,338</span></h4>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-sm-4 d-sm-flex align-items-center">
+                      <div class="media mg-t-20 d-flex align-items-center justify-content-center single-conversion">
+                         <div
+                            class="wd-45 wd-md-50 ht-45 ht-md-50 card-icon-danger mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded">
+                            <i class="ion-ios-pulse-strong tx-danger tx-20"></i>
+                         </div>
+                         <div>
+                            <span class="tx-uppercase tx-10 tx-gray-500">Total Conversions</span>
+                            <h4 class="tx-dark tx-20 mg-b-0 tx-rubik tx-normal">$<span class="counter">
+                                  5,338</span></h4>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-12">
+                      <div class="clearfix">
+                         <div id="revenueAreaChart"></div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <!-- Behavior and conversions  end -->
+ <!-- stats start -->
+ <div class="stats-chart-wrapper">
+    <div class="row row-xs clearfix">
+       <!--================================-->
+       <!-- Social Traffic Start -->
+       <!--================================-->
+       <div class="col-sm-12 col-xl-4">
+          <div class="card mg-b-20">
+             <div class="card-header">
+                <h4 class="card-header-title">
+                   Social Traffic
+                </h4>
+                <div class="card-header-btn">
+                   <a href="" data-bs-toggle="collapse" class="btn card-collapse"
+                      data-bs-target="#socialTraffic" aria-expanded="true"><i
+                         class="ion-ios-arrow-down"></i></a>
+                </div>
+             </div>
+             <div class="card-body pd-0 collapse show social-traffic" id="socialTraffic">
+                <div class="table-responsive">
+                   <table class="table table-hover my-0">
+                      <thead class="tx-10 tx-uppercase">
+                         <tr>
+                            <th>Referral</th>
+                            <th class="text-right">Visitors</th>
+                            <th class="text-right d-none d-md-table-cell w-50">Percentage (%)</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                         <tr>
+                            <td>
+                               <a href="" class="tx-facebook"><i class="fa fa-facebook "></i> Facebook</a>
+                            </td>
+                            <td class="text-right">
+                               1,480
+                            </td>
+                            <td class="d-none d-md-table-cell align-middle">
+                               <div class="progress ht-3 mg-b-0 op-5">
+                                  <div class="progress-bar bg-primary wd-85p" role="progressbar"
+                                     aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                               </div>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>
+                               <a href="" class="tx-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+                            </td>
+                            <td class="text-right">
+                               2,645
+                            </td>
+                            <td class="d-none d-md-table-cell align-middle">
+                               <div class="progress ht-3 mg-b-0 op-5">
+                                  <div class="progress-bar bg-indigo wd-75p" role="progressbar"
+                                     aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                               </div>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>
+                               <a href="#" class="tx-google-plus"><i class="fa fa-google-plus"></i> Google
+                                  +</a>
+                            </td>
+                            <td class="text-right">
+                               4,807
+                            </td>
+                            <td class="d-none d-md-table-cell align-middle">
+                               <div class="progress ht-3 mg-b-0 op-5">
+                                  <div class="progress-bar bg-warning wd-65p" role="progressbar"
+                                     aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                               </div>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>
+                               <a href="#" class="tx-instagram"><i class="fa fa-instagram"></i>
+                                  Instagram</a>
+                            </td>
+                            <td class="text-right">
+                               3,678
+                            </td>
+                            <td class="d-none d-md-table-cell align-middle">
+                               <div class="progress ht-3 mg-b-0 op-5">
+                                  <div class="progress-bar bg-info wd-85p" role="progressbar"
+                                     aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                               </div>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>
+                               <a href="#" class="tx-linkedin"><i class="fa fa-linkedin"></i> Linkedin</a>
+                            </td>
+                            <td class="text-right">
+                               5,480
+                            </td>
+                            <td class="d-none d-md-table-cell align-middle">
+                               <div class="progress ht-3 mg-b-0  op-5">
+                                  <div class="progress-bar bg-teal wd-95p" role="progressbar"
+                                     aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                               </div>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>
+                               <a href="" class="tx-dribbble"><i class="fa fa-dribbble"></i> Dribbble</a>
+                            </td>
+                            <td class="text-right">
+                               3,245
+                            </td>
+                            <td class="d-none d-md-table-cell align-middle">
+                               <div class="progress ht-3 mg-b-0">
+                                  <div class="progress-bar bg-danger wd-65p" role="progressbar"
+                                     aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                               </div>
+                            </td>
+                         </tr>
+                      </tbody>
+                   </table>
+                </div>
+             </div>
+          </div>
+       </div>
+       <!--/ Social Traffic End -->
+       <!--================================-->
+       <!--  Start -->
+       <!--================================-->
+       <div class="col-sm-12 col-xl-8">
+          <div class="card mg-b-20">
+             <div class="card-header">
+                <h4 class="card-header-title">
+                   Traffic Sources
+                </h4>
+                <div class="card-header-btn">
+                   <a href="" data-bs-toggle="collapse" class="btn card-collapse"
+                      data-bs-target="#trafficSources" aria-expanded="true"><i
+                         class="ion-ios-arrow-down"></i></a>
+                </div>
+             </div>
+             <div class="card-body pd-0 collapse show traffic-sources" id="trafficSources">
+                <div class="table-responsive">
+                   <table class="table table-hover my-0">
+                      <thead class="tx-10 tx-uppercase">
+                         <tr>
+                            <th>Source</th>
+                            <th class="text-right">Users</th>
+                            <th class="text-right">Sessions</th>
+                            <th class="text-right">Bounce Rate</th>
+                            <th class="text-right">Avg. Duration</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                         <tr>
+                            <td><a href="">Google Ads</a></td>
+                            <td class="text-right">3,712</td>
+                            <td class="text-right">1,896</td>
+                            <td class="text-right">22.18%<small>(<i
+                                     class="fa fa-arrow-up text-success ml-1"></i> 46%</small>)</td>
+                            <td class="text-right">00:03:52</td>
+                         </tr>
+                         <tr>
+                            <td><a href="">Instagram Ads</a></td>
+                            <td class="text-right">1,876</td>
+                            <td class="text-right">988</td>
+                            <td class="text-right">32.45%<small>(<i
+                                     class="fa fa-arrow-up text-success ml-1"></i> 38%</small>)</td>
+                            <td class="text-right">00:04:55</td>
+                         </tr>
+                         <tr>
+                            <td><a href="">Twitter Ads</a></td>
+                            <td class="text-right">1,342 </td>
+                            <td class="text-right">652</td>
+                            <td class="text-right">28.36%<small>(<i
+                                     class="fa fa-arrow-up text-success ml-1"></i> 46%</small>)</td>
+                            <td class="text-right">00:05:42</td>
+                         </tr>
+                         <tr>
+                            <td><a href="">LinkedIn Ads</a></td>
+                            <td class="text-right">1,098</td>
+                            <td class="text-right">541</td>
+                            <td class="text-right">24.89%<small>(<i
+                                     class="fa fa-arrow-down text-danger ml-1"></i> 24%</small>)</td>
+                            <td class="text-right">00:06:12</td>
+                         </tr>
+                         <tr>
+                            <td><a href="">Direct Traffic</a></td>
+                            <td class="text-right">6,209</td>
+                            <td class="text-right">3,485</td>
+                            <td class="text-right">15.72%<small>(<i
+                                     class="fa fa-arrow-up text-success ml-1"></i> 24%</small>)</td>
+                            <td class="text-right">00:02:32</td>
+                         </tr>
+                         <tr>
+                            <td><a href="">Email</a></td>
+                            <td class="text-right">3,524</td>
+                            <td class="text-right">1,365</td>
+                            <td class="text-right">27.23% <small>(<i
+                                     class="fa fa-arrow-down text-danger ml-1"></i> 46%</small>)</td>
+                            <td class="text-right">00:07:38</td>
+                         </tr>
+                      </tbody>
+                   </table>
+                </div>
+             </div>
+          </div>
+       </div>
+       <!--/  End -->
+    </div>
+ </div>
+ <!-- stats end -->
+ <!-- Usage start  -->
+ <div class="usage-chart-wrapper">
+    <div class="row row-xs clearfix">
+       <div class="col-sm-12 col-xl-8">
+          <div class="card mg-b-20">
+             <div class="card-header">
+                <h4 class="card-header-title">
+                   Browser Used By Users
+                </h4>
+                <div class="card-header-btn">
+                   <a href="" data-bs-toggle="collapse" class="btn card-collapse"
+                      data-bs-target="#browserUsedByUsers" aria-expanded="true"><i
+                         class="ion-ios-arrow-down"></i></a>
+                </div>
+             </div>
+             <div class="card-body pd-0 collapse show browser-by-users" id="browserUsedByUsers">
+                <div class="table-responsive">
+                   <table class="table table-hover mg-0">
+                      <thead class="tx-10 tx-uppercase">
+                         <tr>
+                            <th class="wd-5p">&nbsp;</th>
+                            <th>Browser</th>
+                            <th class="text-right">Sessions</th>
+                            <th class="text-right">Bounce Rate</th>
+                            <th class="text-right">Avg. Duration</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                         <tr>
+                            <td><i class="fa fa-chrome tx-15 tx-primary op-6"></i></td>
+                            <td><a href="">Google Chrome</a></td>
+                            <td class="text-right">16,245</td>
+                            <td class="text-right">28.62% <small>(<i
+                                     class="fa fa-arrow-up text-success ml-1"></i> 37%</small>)</td>
+                            <td class="text-right">00:42:10</td>
+                         </tr>
+                         <tr>
+                            <td><i class="fa fa-firefox tx-15 tx-orange"></i></td>
+                            <td><a href="">Mozilla Firefox</a></td>
+                            <td class="text-right">1,954</td>
+                            <td class="text-right">29.83% <small>(<i
+                                     class="fa fa-arrow-up text-success ml-1"></i>42%</small>)</td>
+                            <td class="text-right">00:39:02</td>
+                         </tr>
+                         <tr>
+                            <td><i class="fa fa-safari tx-15 tx-primary"></i></td>
+                            <td><a href="">Apple Safari</a></td>
+                            <td class="text-right">1,576</td>
+                            <td class="text-right">32.18%<small>(<i
+                                     class="fa fa-arrow-down text-danger ml-1"></i>49%</small>)</td>
+                            <td class="text-right">00:31:45</td>
+                         </tr>
+                         <tr>
+                            <td><i class="fa fa-edge tx-15 tx-primary"></i></td>
+                            <td><a href="">Microsoft Edge</a></td>
+                            <td class="text-right">985</td>
+                            <td class="text-right">30.57%<small>(<i
+                                     class="fa fa-arrow-up text-success ml-1"></i> 47%</small>)</td>
+                            <td class="text-right">00:22:36</td>
+                         </tr>
+                         <tr>
+                            <td><i class="fa fa-opera tx-15 tx-danger"></i></td>
+                            <td><a href="">Opera</a></td>
+                            <td class="text-right">524</td>
+                            <td class="text-right">28.96%<small>(<i
+                                     class="fa fa-arrow-down text-danger ml-1"></i>41%</small>)</td>
+                            <td class="text-right">00:19:58</td>
+                         </tr>
+                         <tr>
+                            <td><i class="fa fa-futbol-o tx-15 tx-secondary"></i></td>
+                            <td><a href="">Others</a></td>
+                            <td class="text-right">1,209</td>
+                            <td class="text-right">24.91%<small>(<i
+                                     class="fa fa-arrow-down text-danger ml-1"></i>18%</small>)</td>
+                            <td class="text-right">00:15:27</td>
+                         </tr>
+                      </tbody>
+                   </table>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="col-xl-4">
+          <div class="card mg-b-20">
+             <div class="card-header">
+                <h4 class="card-header-title">
+                   Visitors By Devices
+                </h4>
+                <div class="card-header-btn">
+                   <a href="" data-bs-toggle="collapse" class="btn card-collapse"
+                      data-bs-target="#visitorsDevices" aria-expanded="true"><i
+                         class="ion-ios-arrow-down"></i></a>
+                </div>
+             </div>
+             <div class="card-body pd-0 collapse show visitor-devices" id="visitorsDevices">
+                <div class="row no-gutters mg-x-15">
+                   <div class="col-md-4 pd-t-10">
+                      <div class="media mg-t-20 single-device-stats">
+                         <div
+                            class="wd-40 wd-md-50 ht-40 ht-md-50 card-icon-primary mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded">
+                            <i class="ion-android-desktop tx-primary tx-20"></i>
+                         </div>
+                         <div>
+                            <span class="tx-uppercase tx-10 tx-gray-500">Desktop</span>
+                            <h4 class="tx-20 tx-sm-18 tx-md-24 mg-b-0 tx-normal tx-rubik tx-dark"><span
+                                  class="counter">5,958</span></h4>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-md-4 pd-t-10">
+                      <div class="media mg-t-20 single-device-stats">
+                         <div
+                            class="wd-40 wd-md-50 ht-40 ht-md-50 card-icon-warning mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded">
+                            <i class="ion-iphone tx-warning tx-20"></i>
+                         </div>
+                         <div>
+                            <span class="tx-uppercase tx-10 tx-gray-500">Mobile</span>
+                            <h4 class="tx-20 tx-sm-18 tx-md-24 mg-b-0 tx-normal tx-rubik tx-dark"><span
+                                  class="counter">3,958</span></h4>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="col-md-4 pd-t-10">
+                      <div class="media mg-t-20 single-device-stats">
+                         <div
+                            class="wd-40 wd-md-50 ht-40 ht-md-50 card-icon-success mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded">
+                            <i class="icon-cloud-upload tx-success tx-20"></i>
+                         </div>
+                         <div>
+                            <span class="tx-uppercase tx-10 tx-gray-500">Others</span>
+                            <h4 class="tx-20 tx-sm-18 tx-md-24 mg-b-0 tx-normal tx-rubik tx-dark"><span
+                                  class="counter">2,958</span></h4>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="clearfix">
+                   <div id="visitorsByDevices"></div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <!-- Usage end -->

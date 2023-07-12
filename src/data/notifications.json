@@ -1,0 +1,34 @@
+{
+    "entries":[
+        {
+          "title": "Conversion Milestone",
+          "date": "Jun 05",
+          "description": "Great news! Your website has reached a significant milestone in conversions.",
+          "icon": "far fa-bell"
+        },
+        {
+          "title": "New Feature Released",
+          "date": "Jul 10",
+          "description": "Exciting news! We have launched a new feature to enhance your experience.",
+          "icon": "far fa-star"
+        },
+        {
+          "title": "Important Announcement",
+          "date": "Aug 20",
+          "description": "Attention! Please review the latest policy updates and take necessary actions.",
+          "icon": "far fa-exclamation-circle"
+        },
+        {
+          "title": "Reminder: Upcoming Event",
+          "date": "Sep 05",
+          "description": "Just a friendly reminder about the upcoming event. Don't forget to mark your calendar!",
+          "icon": "far fa-calendar"
+        },
+        {
+          "title": "Service Maintenance",
+          "date": "Oct 15",
+          "description": "Scheduled maintenance is planned for our services. Expect temporary disruptions.",
+          "icon": "far fa-tools"
+        }
+      ]
+}
