@@ -1,453 +1,135 @@
 "use strict";
-
-/***************************************************
-****************************************************
-// Counter Active Js
-****************************************************
-***************************************************/
-
-// $( function() {
-// 	$('.counter').countUp();
-// });
-
-
-/***************************************************
-****************************************************
-// Feather Active Js
-****************************************************
-***************************************************/
-
-// $( function() {
-// 	feather.replace()
-// });
-
-/***************************************************
-****************************************************
-// Show and hide Search Form JS
-****************************************************
-***************************************************/
-var handleSearchForm = function() {
-	$("#search-button").on('click', function () {
-		$('body').addClass('search-open');
-	});
-
-	$("#close-search").on('click', function () {
-		$('body').removeClass('search-open');
-	});
-};
-
-
 /***************************************************
 ****************************************************
 // Web Ticker Active Js
 ****************************************************
 ***************************************************/
 $(function () {
- 	if ($('#webticker').length) {   
-		$("#webticker").webTicker({
-			height:'auto',
-			duplicate:true, 
-			startEmpty:true, 
-			rssfrequency:1
-		});
-	}
-	
-}); 
-
-
-/***************************************************
-****************************************************
-// Setting Sidebar Active Js
-****************************************************
-***************************************************/
-$( "document" ).ready( function() {
-	var $mainSidebar = $( "#settingSidebar" );
-
-	$mainSidebar.simplerSidebar( {
-		attr: "sidebar-main",
-		init: "closed",
-		selectors: {
-			trigger: "#settingSidebarTrigger",
-			quitter: ".quitter"
-		},
-		animation: {
-			easing: "easeOutQuint"
-		}
-	} );
-} );
-
-
-/***************************************************
-****************************************************
-// Dropdown Animation
-****************************************************
-***************************************************/
-// Add slidedown & fadein animation to dropdown
-var handleDropdownAnimation = function() {
-	$('.dropdown').on('show.bs.dropdown', function (e) {
-		var $dropdown = $(this).find('.dropdown-menu');
-		var orig_margin_top = parseInt($dropdown.css('margin-top'));
-		$dropdown.css({
-			'margin-top': (orig_margin_top + 25) + 'px',
-			opacity: 0
-		}).animate({
-			'margin-top': orig_margin_top + 'px',
-			opacity: 1
-		}, 500, function () {
-			$(this).css({
-				'margin-top': ''
-			});
-		});
-	});
-	// Add slidedown & fadeout animation to dropdown
-	$('.dropdown').on('hide.bs.dropdown', function (e) {
-		var $dropdown = $(this).find('.dropdown-menu');
-		var orig_margin_top = parseInt($dropdown.css('margin-top'));
-		$dropdown.css({
-			'margin-top': orig_margin_top + 'px',
-			opacity: 1,
-			display: 'block'
-		}).animate({
-			'margin-top': (orig_margin_top + 25) + 'px',
-			opacity: 0
-		}, 500, function () {
-			$(this).css({
-				'margin-top': '',
-				display: ''
-			});
-		});
-	});
-
-}
-
-
-// Mask Formatter
-var handleMaskFormatter = function() {
-	provider.initFormatter = function () {
-		if (!$.fn.formatter) {
-			return;
-		}
-
-		provider.provide('formatter', function () {
-			var options = {
-				pattern: $(this).data('format'),
-				persistent: $(this).dataAttr('persistent', true),
-			}
-
-			$(this).formatter(options);
-		});
-
-	}
-
-};
-
-
-/***************************************************
-****************************************************
-// Card - Remove / Reload / Collapse / Expand
-****************************************************
-***************************************************/
-var cardActionRunning = false;
-var handleCardAction = function() {
-	"use strict";
-
-	if (cardActionRunning) {
-		return false;
-	}
-	cardActionRunning = true;
-	    
-	// collapse
-	$(document).on('mouseover', '[data-toggle=collapse]', function(e) {
-		if (!$(this).attr('data-init')) {
-			$(this).tooltip({
-				title: 'Collapse/Expand',
-				placement: 'bottom',
-				trigger: 'hover',
-				container: 'body'
-			});
-			$(this).tooltip('show');
-			$(this).attr('data-init', true);
-		}
-	});
-	/*$(document).on('click', '[data-toggle=collapse]', function(e) {
-		e.preventDefault();
-		$(this).closest('.card').find('.card-body').slideToggle();
-	});*/
-
-	// reload
-	$(document).on('mouseover', '[data-toggle=refresh]', function(e) {
-		if (!$(this).attr('data-init')) {
-			$(this).tooltip({
-				title: 'Refresh',
-				placement: 'bottom',
-				trigger: 'hover',
-				container: 'body'
-			});
-			$(this).tooltip('show');
-		}
-	});
-	$(document).on('click', '[data-toggle=refresh]', function(e) {
-		e.preventDefault();
-		var target = $(this).closest('.card');
-		if (!$(target).hasClass('card-loading')) {
-			var targetBody = $(target).find('.card-body');
-			var spinnerClass = ($(this).attr('data-spinner-class')) ? $(this).attr('data-spinner-class') : 'text-primary';
-			var spinnerHtml = '<div class="card-loader"><div class="spinner-border '+ spinnerClass +'"></div></div>';
-			$(target).addClass('card-loading');
-			if ($(targetBody).length !== 0) {
-				$(targetBody).append(spinnerHtml);
-			} else {
-				$(target).append(spinnerHtml);
-			}
-			setTimeout(function() {
-				$(target).removeClass('card-loading');
-				$(target).find('.card-loader').remove();
-			}, 2000);
-		}
-	});
-
-	// expand
-	$(document).on('mouseover', '[data-toggle=expand]', function(e) {
-		if (!$(this).attr('data-init')) {
-			$(this).tooltip({
-				title: 'Minimize/Maximize',
-				placement: 'bottom',
-				trigger: 'hover',
-				container: 'body'
-			});
-			$(this).tooltip('show');
-			$(this).attr('data-init', true);
-		}
-	});
-	$(document).on('click', '[data-toggle=expand]', function(e) {
-		e.preventDefault();
-		var target = $(this).closest('.card');
-		var targetBody = $(target).find('.card-body');
-		var targetClass = 'card-expand';
-		var targetTop = 40;
-		if ($(targetBody).length !== 0) {
-			var targetOffsetTop = $(target).offset().top;
-			var targetBodyOffsetTop = $(targetBody).offset().top;
-			targetTop = targetBodyOffsetTop - targetOffsetTop;
-		}
-
-		if ($('body').hasClass(targetClass) && $(target).hasClass(targetClass)) {
-			$('body, .card').removeClass(targetClass);
-			$('.card').removeAttr('style');
-			$(targetBody).removeAttr('style');
-		} else {
-			$('body').addClass(targetClass);
-			$(this).closest('.card').addClass(targetClass);
-		}
-		$(window).trigger('resize');
-	});
-		
-	// remove
-	$(document).on('mouseover', '[data-toggle=remove]', function(e) {
-		if (!$(this).attr('data-init')) {
-			$(this).tooltip({
-				title: 'Remove',
-				placement: 'bottom',
-				trigger: 'hover',
-				container: 'body'
-			});
-			$(this).tooltip('show');
-			$(this).attr('data-init', true);
-		}
-	});
-	$(document).on('click', '[data-toggle=remove]', function(e) {
-		e.preventDefault();
-		$(this).tooltip('dispose');
-		$(this).closest('.card').remove();
-	});
-
-	
-};
-
-/***************************************************
-****************************************************
-// Tooltip & Popover
-****************************************************
-***************************************************/
-var handelTooltipPopoverActivation = function() {
-	"use strict";
-	if ($('[data-toggle="tooltip"]').length !== 0) {
-		$('[data-toggle=tooltip]').tooltip();
-	}
-	if ($('[data-toggle="popover"]').length !== 0) {
-		$('[data-toggle=popover]').popover();
-	}
-};
-
-
+  if ($("#webticker").length) {
+    $("#webticker").webTicker({
+      height: "auto",
+      duplicate: true,
+      startEmpty: true,
+      rssfrequency: 1,
+    });
+  }
+});
 /***************************************************
 ****************************************************
 // Slimscroll Active Code
 ****************************************************
-***************************************************/   
+***************************************************/
 if ($.fn.slimscroll) {
-	$('#messageBox, #notificationsBox, #onlineBox, #activityLog').slimscroll({
-		height: '260px',
-		size: '2px',
-		position: 'right',
-		color: '#A5A7AB',
-		alwaysVisible: false,
-		distance: '0px',
-		railVisible: false,
-		wheelStep: 15
-	});
+  $("#messageBox, #notificationsBox, #onlineBox, #activityLog").slimscroll({
+    height: "260px",
+    size: "2px",
+    position: "right",
+    color: "#A5A7AB",
+    alwaysVisible: false,
+    distance: "0px",
+    railVisible: false,
+    wheelStep: 15,
+  });
 }
-
-if ($.fn.slimscroll) {
-	$('#activityLog1, #activityLog2, #activityLog3, #recentComment').slimscroll({
-		height: '350px',
-		size: '2px',
-		position: 'right',
-		color: '#A5A7AB',
-		alwaysVisible: false,
-		distance: '0px',
-		railVisible: false,
-		wheelStep: 15
-	});
-}
-	
-	
-if ($.fn.slimscroll) {
-	$('#chatPeopleList').slimscroll({
-		height: '460px',
-		size: '2px',
-		position: 'right',
-		color: '#A5A7AB',
-		alwaysVisible: false,
-		distance: '0px',
-		railVisible: false,
-		wheelStep: 15
-	});
-}
-		
-	
-if ($.fn.slimscroll) {
-	$('#chatMessages').slimscroll({
-		height: '550px',
-		size: '2px',
-		position: 'right',
-		color: '#A5A7AB',
-		alwaysVisible: false,
-		distance: '0px',
-		railVisible: false,
-		wheelStep: 15
-	});
-}		
-	
-if ($.fn.slimscroll) {
-	$('#settingSidebarScroll, #demoSettingSidebarScroll').slimscroll({
-		height: '100%',
-		size: '5px',
-		position: 'right',
-		color: '#1b2835',
-		alwaysVisible: false,
-		distance: '0px',
-		railVisible: false,
-		wheelStep: 15
-	});
-}
-	
-	
 /***************************************************
 ****************************************************
 // Scrollbar
 ****************************************************
 ***************************************************/
-var handleSlimScroll = function() {
-	"use strict";
-	$('[data-scrollbar=true]').each( function() {
-		generateSlimScroll($(this));
-	});
+var handleSlimScroll = function () {
+  "use strict";
+  $("[data-scrollbar=true]").each(function () {
+    generateSlimScroll($(this));
+  });
 };
-var generateSlimScroll = function(element) {
-	if ($(element).attr('data-init')) {
-		return;
-	}
-	var dataHeight = $(element).attr('data-height');
-		dataHeight = (!dataHeight) ? $(element).height() : dataHeight;
+var generateSlimScroll = function (element) {
+  if ($(element).attr("data-init")) {
+    return;
+  }
+  var dataHeight = $(element).attr("data-height");
+  dataHeight = !dataHeight ? $(element).height() : dataHeight;
 
-	var scrollBarOption = {
-		height: dataHeight, 
-		alwaysVisible: false
-	};
-	if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-		$(element).css('height', dataHeight);
-		$(element).css('overflow-x','scroll');
-	} else {
-		$(element).slimScroll(scrollBarOption);
-		$(element).closest('.slimScrollDiv').find('.slimScrollBar').hide();
-	}
-	$(element).attr('data-init', true);
+  var scrollBarOption = {
+    height: dataHeight,
+    alwaysVisible: false,
+  };
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    $(element).css("height", dataHeight);
+    $(element).css("overflow-x", "scroll");
+  } else {
+    $(element).slimScroll(scrollBarOption);
+    $(element).closest(".slimScrollDiv").find(".slimScrollBar").hide();
+  }
+  $(element).attr("data-init", true);
 };
-
 
 /***************************************************
 ****************************************************
 // Scroll to Top Button
 ****************************************************
 ***************************************************/
-var handleScrollToTopButton = function() {
-	"use strict";
-	$(document).scroll( function() {
-		var totalScroll = $(document).scrollTop();
+var handleScrollToTopButton = function () {
+  "use strict";
+  $(document).scroll(function () {
+    var totalScroll = $(document).scrollTop();
 
-		if (totalScroll >= 200) {
-			$('[data-click=scroll-top]').addClass('show');
-		} else {
-			$('[data-click=scroll-top]').removeClass('show');
-		}
-	});
-	$('.content').scroll( function() {
-		var totalScroll = $('.content').scrollTop();
+    if (totalScroll >= 200) {
+      $("[data-click=scroll-top]").addClass("show");
+    } else {
+      $("[data-click=scroll-top]").removeClass("show");
+    }
+  });
+  $(".content").scroll(function () {
+    var totalScroll = $(".content").scrollTop();
 
-		if (totalScroll >= 200) {
-			$('[data-click=scroll-top]').addClass('show');
-		} else {
-			$('[data-click=scroll-top]').removeClass('show');
-		}
-	});
-	$('[data-click=scroll-top]').on('click', function(e) {
-		e.preventDefault();
-		$('html, body, .content').animate({
-			scrollTop: $("body").offset().top
-		}, 500);
-	});
+    if (totalScroll >= 200) {
+      $("[data-click=scroll-top]").addClass("show");
+    } else {
+      $("[data-click=scroll-top]").removeClass("show");
+    }
+  });
+  $("[data-click=scroll-top]").on("click", function (e) {
+    e.preventDefault();
+    $("html, body, .content").animate(
+      {
+        scrollTop: $("body").offset().top,
+      },
+      500
+    );
+  });
 };
-
 
 /***************************************************
 ****************************************************
 // Application Controller
 ****************************************************
 ***************************************************/
-var App = function () {
-	"use strict";
-	
-	return {
-		init: function () {
-			this.initComponent();
-		},
-		initComponent: function() {
-			handleSearchForm();
-			handleDropdownAnimation();
-			handleCardAction();
-			handelTooltipPopoverActivation();
-			handleSlimScroll();
-			handleScrollToTopButton();
-		},
-		scrollTop: function() {
-			$('html, body, .content').animate({
-				scrollTop: $('body').offset().top
-			}, 0);
-		}
-	};
-}();
+var App = (function () {
+  "use strict";
 
-$(document).ready(function() {
-	App.init();
+  return {
+    init: function () {
+      this.initComponent();
+    },
+    initComponent: function () {
+      handleSlimScroll();
+      handleScrollToTopButton();
+    },
+    scrollTop: function () {
+      $("html, body, .content").animate(
+        {
+          scrollTop: $("body").offset().top,
+        },
+        0
+      );
+    },
+  };
+})();
+
+$(document).ready(function () {
+  App.init();
 });
