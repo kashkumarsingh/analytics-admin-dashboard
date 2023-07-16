@@ -6,7 +6,7 @@
             "counter": "3,860",
             "increase": "+351",
             "progress": "70",
-            "progressWidthClass": "wd-70p",
+            "progressWidthClass": "width-70",
             "progressBarClass": "bg-success",
             "isPositiveChange": true
           },
@@ -16,7 +16,7 @@
             "counter": "64,530",
             "increase": "+425",
             "progress": "80",
-            "progressWidthClass": "wd-80p",
+            "progressWidthClass": "width-80",
             "progressBarClass": "bg-success",
             "isPositiveChange": true
 
@@ -27,7 +27,7 @@
             "counter": "49.38%",
             "increase": "-211",
             "progress": "70",
-            "progressWidthClass": "wd-70p",
+            "progressWidthClass": "width-70",
             "progressBarClass": "bg-danger",
             "isPositiveChange": false
           },
@@ -37,7 +37,7 @@
             "counter": "45.90%",
             "increase": "+151",
             "progress": "65",
-            "progressWidthClass": "wd-65p",
+            "progressWidthClass": "width-65",
             "progressBarClass": "bg-success",
             "isPositiveChange": true
           }

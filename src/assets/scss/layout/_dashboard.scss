@@ -1,139 +1,210 @@
-.pageheader{
+.pageheader {
     margin-bottom: 2rem;
-    .pageheader-left{
-        h1{
+
+    .pageheader-left {
+        h1 {
             font-size: 1.4rem;
-            color:#5c5a5a;
-            @media only screen and (max-width:576px){
+            color: #5c5a5a;
+
+            @media only screen and (max-width:576px) {
                 font-size: 1rem;
             }
         }
     }
 }
-@media only screen and (max-width :576px){
+
+@media only screen and (max-width :576px) {
     .pageheader {
         margin-bottom: 2rem;
         flex-flow: column nowrap;
     }
 }
-.metrics-chart{
-    .card{
-        .card-body{
-            &.audienceMetrics-card {
-                height: 600px;
-            }
-            .single-metrics{
-                .rounded-circle{
-                    width:10px;
-                    height: 10px;
-                    margin-right: 10px;
-                    &.bd-info{
-                        border: 1px solid rgba(0,0,0,0.05);
-                        border-color: #4285f4;
-                        border-width:3px;
-                    }
+
+.metrics-chart {
+    .card {
+        .card-body {
+
+            .single-metrics {
+                align-items: center;
+                gap: 1rem;
+
+                .metrics-icon-type {
+                    width: 50px;
+                    height: 50px;
+                    background: rgba(5, 88, 183, 0.1);
+                    border: transparent;
+                    border-radius: 7px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #5d78ff;
                 }
-                .single-metrics-info{
-                    .top-title{font-size: 10px; text-transform: uppercase; margin-bottom: 0;}
-                    .counter{font-size: 24px; margin-bottom: 0;}
-                    .percentage{
+
+                .single-metrics-info {
+                    .top-title {
+                        font-size: 12px;
+                        line-height: 1.2;
+                        text-transform: uppercase;
+                        margin-bottom: 0;
+                    }
+
+                    .counter {
+                        font-size: 24px;
+                        margin-bottom: 0;
+                    }
+
+                    .percentage {
                         font-size: 12px;
                     }
                 }
             }
         }
     }
-    .sessions-metrics{
-        .single-session-metrics{
-            margin-bottom: 1rem;
-            .title, .goal{
+
+    .sessions-metrics {
+        margin-top: 1rem;
+
+        .single-session-metrics {
+            .title {
+                font-size: 12px;
+                line-height: 1.2;
+                text-transform: uppercase;
+                margin-bottom: 0;
+
+            }
+
+            .goal {
                 font-size: 14px;
                 margin-bottom: 0;
-                color:#2d2c2c;
+                color: #2d2c2c;
             }
-            
-            &:last-of-type{
+
+            &:last-of-type {
                 margin-bottom: 0.7rem;
             }
-            .progress{
-                height: .2rem;
-              
-                .progress-bar{
-                    width:70%;
-                }               
-            }
+
         }
 
     }
 }
 
-.charts-wrapper{
+
+.progress {
+    height: .2rem;
+
+    .width-70 {
+        width: 70% !important;
+        background-color: #66a4fb !important;
+    }
+
+}
+
+
+.charts-wrapper {
     position: relative;
-    .single-charts-wrapper{
-          .card-body{
-            h6{
-                font-size: 1rem;
-                text-transform: uppercase;
-                margin-bottom: 0;
+
+    .single-charts-wrapper {
+        .card-body {
+            .charts-wrapper-heading {
+                margin-bottom: 2rem;
+                display: flex;
+                flex-flow: column nowrap;
+                height: 50px;
+                justify-content: center;
+
+                h6 {
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    margin-bottom: 0;
+                }
             }
-          }
-          p{
-            font-size: 12px;
-            margin-bottom: 1rem;
-          }
-          .single-user-metrics,
-          .single-conversion-metrics{
-            gap:1rem;
-             .icon{
-                width:45px;
+
+            p {
+                font-size: 12px;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .single-user-metrics,
+        .single-conversion-metrics {
+            gap: 1rem;
+
+            .icon {
+                width: 45px;
                 height: 45px;
                 background-color: #adb5bd;
+
                 &.card-icon-danger {
                     color: #dc3545 !important;
-                    background: rgba(220, 53, 69, .10)!important;
+                    background: rgba(220, 53, 69, .10) !important;
                 }
+
                 &.card-icon-primary {
                     color: #5d78ff !important;
                     background: rgba(5, 88, 183, 0.10) !important;
                 }
+
                 &.card-icon-warning {
                     color: #ffc107 !important;
-                    background: rgba(234, 147, 12, 0.1)!important;
+                    background: rgba(234, 147, 12, 0.1) !important;
                 }
-             }
-             .stats{
+            }
+
+            .stats {
                 display: flex;
                 flex-flow: column wrap;
-                > span{
+
+                >span {
                     font-size: 10px;
                     text-transform: uppercase;
                     color: #adb5bd;
                     margin-bottom: 5px;
                 }
-                h4{
+
+                h4 {
                     font-size: 1rem;
                     margin-bottom: 0;
                     line-height: 1rem;
-                    span{
-                       font-size: 1.2rem; 
+
+                    span {
+                        font-size: 1.2rem;
                     }
-                    
+
                 }
-             }
-          }
+            }
+        }
+    }
+}
+
+.visitor-devices {
+    text-align: center;
+
+    .visitor-devices-stats {
+        .single-device-stats {
+            span.title {
+                font-size: 12px;
+                line-height: 1.2;
+                text-transform: uppercase;
+                margin-bottom: 0;
+            }
+
+        }
     }
 }
 
 .stats-chart-wrapper,
-.usage-chart-wrapper{
-    .card{
-        .card-body{
-            table{
-                tbody, thead{
-                    tr{
+.usage-chart-wrapper {
+    .card {
+        .card-body {
+            table {
+
+                tbody,
+                thead {
+                    tr {
                         font-size: 1rem;
-                        .progress{
-                            height:.2rem;
+
+                        .progress {
+                            height: .2rem;
                         }
                     }
                 }

@@ -1,4 +1,6 @@
 import ApexCharts from 'apexcharts';
+import 'jquery.flot'
+import 'jquery.flot/jquery.flot.pie'
 $(function ($) {
     const chartConfig = {
       chart: {
@@ -101,6 +103,7 @@ $(function ($) {
         height: 350,
         type: "line",
         stacked: false,
+        toolbar: { show: false },
       },
       stroke: {
         width: [0, 2, 5],
@@ -247,6 +250,8 @@ $(function ($) {
     );
     revenueChart.render();
   
+
+
     // Visitors by devices
     const b3 = {
       chart: {
@@ -260,7 +265,8 @@ $(function ($) {
         pie: {
           expandOnClick: false,
           donut: {
-            size: "70%",
+            size: "80%",
+            
             labels: {
               show: true,
               name: {

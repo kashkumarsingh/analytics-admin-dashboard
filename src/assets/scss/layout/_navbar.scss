@@ -264,11 +264,12 @@
                                 width: 45px;
                                 height: 45px;
                                 border: transparent;
-                                border-radius: 50%;
-                                background: #eee;
+                                border-radius: 7px;
                                 line-height: 45px;
                                 text-align: center;
                                 flex: 1 0 auto;
+                                color: #5d78ff;
+                                background:rgba(5, 88, 183, 0.1);
                             }
 
                             .notification-content-type {

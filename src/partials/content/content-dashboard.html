@@ -24,7 +24,7 @@
 <!-- Metrics Chart Start -->
 <div class="metrics-chart wrapper">
    <div class="row row-xs clearfix">
-      <div class="col-lg-12 col-xl-8 col-12">
+      <div class="col-lg-12 col-xl-12 col-12">
          <div class="card mg-b-20">
             <div class="card-header">
                <h4 class="card-header-title">
@@ -41,7 +41,9 @@
                      {{#each audienceMetrics.entries}}
                      <div
                         class="col-lg-4 col-md-4 col-sm-12 pd-y-15 d-flex align-items-center justify-content-center single-metrics">
-                        <div class="wd-10 ht-10 rounded-circle bd bd-3 bd-info mg-r-10"></div>
+                        <div class="metrics-icon-type">
+                           <span><i class="{{metricsIconType}}"></i></span>
+                        </div>
                         <div class="single-metrics-info">
                            <span class="tx-uppercase tx-10 mg-b-10 top-title">{{title}}</span>
                            <h3 class="tx-20 tx-sm-18 tx-md-24 mg-b-0 tx-normal tx-rubik tx-dark counter"><span
@@ -61,7 +63,10 @@
             </div>
          </div>
       </div>
-      <div class="col-xl-4 mg-t-10 mg-lg-t-0">
+      <!-- Audience Metrics -->
+   </div>
+   <div class="row clearfix">
+      <div class="col-sm-12 col-md-6 col-lg-6">
          <div class="card mg-b-20">
             <div class="card-header">
                <h4 class="card-header-title">
@@ -79,24 +84,15 @@
                <div class="sessions-metrics">
                   <div class="row">
                      {{#each channelsMetrics.entries}}
-                     <div class="col-sm-12 col-md-6 col-xl-12 mg-t-40">
+                     <div class="col-sm-12 col-md-6 col-lg-3  mg-t-40">
                         <div class="single-session-metrics">
                            <div class="d-flex justify-content-between">
-                              <h6 class="tx-uppercase tx-10 mg-b-0 tx-gray-500 title">{{title}}</h6>
-                              <span class="tx-10 tx-gray-500 goal">{{goal}}</span>
+                              <span class="tx-uppercase tx-10 mg-b-0 tx-gray-500 title">{{title}}</span>
                            </div>
                            <div class="d-flex align-items-end justify-content-between mg-b-5">
                               <h5 class="mg-b-0 tx-dark tx-rubik tx-normal"><span class="counter">{{counter}}</span>
                               </h5>
-                              <div class="d-flex align-items-center tx-gray-600"><span
-                                    class="small text-success mr-2 d-flex align-items-center"><i
-                                       class="{{#if isPositiveChange}}fas fa-arrow-up text-success{{else}}fas fa-arrow-down text-danger{{/if}} mr-1"></i>{{increase}}</span>
-                              </div>
-                           </div>
-                           <div class="progress ht-3 mg-b-0 op-5">
-                              <div class="progress-bar bg-teal {{progressWidthClass}} {{progressBarClass}}"
-                                 role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100">
-                              </div>
+      
                            </div>
                         </div>
                      </div>
@@ -107,80 +103,41 @@
             </div>
          </div>
       </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+         <div class="card mg-b-20">
+            <div class="card-header">
+               <h4 class="card-header-title">
+                  Visitors By Devices
+               </h4>
+               <div class="card-header-btn">
+                  <a href="" data-bs-toggle="collapse" class="btn card-collapse" data-bs-target="#visitorsDevices"
+                     aria-expanded="true"><i class="fas fa-arrow-down"></i></a>
+               </div>
+            </div>
+            <div class="card-body pd-0 collapse show visitor-devices" id="visitorsDevices">
+   
+               <div class="clearfix">
+                  <div id="visitorsByDevices"></div>
+               </div>
+               <div class="visitor-devices-stats">
+                  <div class="row no-gutters mg-x-15">
+                     {{#each deviceUsage.devices}}
+                     <div class="col-md-4 pd-t-10">
+                        <div class="media mg-t-20 single-device-stats">
+                           <span class="tx-uppercase tx-10 tx-gray-500 title">{{type}}</span>
+                           <h5 class="mg-b-0 tx-dark tx-rubik tx-normal"><span class="counter">{{count}}</span>
+                           </h5>
+                        </div>
+                     </div>
+                     {{/each}}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
    </div>
 </div>
 <!-- Metrics chart End -->
-<!-- Behavior and conversions Start -->
-<div class="charts-wrapper">
-   <div class="row row-xs clearfix">
-      <div class="col-xl-6">
-         <div class="card mg-b-20 website-interaction-metrics single-charts-wrapper">
-            <div class="card-body">
-               <h6 class="tx-dark tx-uppercase mg-b-10 tx-16 tx-semibold tx-spacing-1">Website
-                  Interaction Metrics</h6>
-               <p class="tx-12 mb-2 tx-gray-600">Track user behavior and engagement to gain valuable
-                  insights for improving your website. <a href="#">Learn More</a></p>
-               <div class="row">
-                  {{#each commonMetrics.metrics1}}
-                  <div class="col-sm-4 d-sm-flex align-items-center">
-                     <div class="media single-user-metrics d-flex align-items-center">
-                        <div
-                           class="icon wd-45 wd-md-50 ht-45 ht-md-50 card-icon-primary mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded">
-                           <i class="fas fa-heart-pulse tx-primary tx-20"></i>
-                        </div>
-                        <div class="stats">
-                           <span class="tx-uppercase tx-10 tx-gray-500">{{title}}</span>
-                           <h4 class="tx-dark tx-20 mg-b-0 tx-rubik tx-normal"><span class="counter">{{value}}</span></h4>
-                        </div>
-                     </div>
-                  </div>
-                  {{/each}}
-                  <div class="col-12">
-                     <div class="clearfix">
-                        <div id="behaviorAreaChart"></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="col-xl-6">
-         <div class="card mg-b-20 conversion-success single-charts-wrapper">
-            <div class="card-body">
-               <h6 class="tx-dark tx-uppercase mg-b-10 tx-16 tx-semibold tx-spacing-1">Conversion Success
-               </h6>
-               <p class="tx-12 mb-2 tx-gray-600">Measure the effectiveness of your website in achieving
-                  desired actions, such as purchases, form submissions, or sign-ups. <a href="#">Learn
-                     More</a></p>
-               <div class="row">
-                  {{#each commonMetrics.metrics2}}
-                  <div class="col-sm-4 d-sm-flex align-items-center">
-                     <div class="media mg-t-20 d-flex align-items-center justify-content-center single-conversion-metrics">
-                        <!--  {{#if isPositiveChange}}{{else}}{{/if}} -->
-                        <div
-                           class="icon card-icon-primary wd-45 wd-md-50 ht-45 ht-md-50  mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded">
-                           <i class="fas fa-heart-pulse tx-primary tx-20"></i>
-                        </div>
-                        <div class="stats">
-                           <span class="tx-uppercase tx-10 tx-gray-500">{{title}}</span>
-                           <h4 class="tx-dark tx-20 mg-b-0 tx-rubik tx-normal"><span class="counter">{{value}}</span>
-                           </h4>
-                        </div>
-                     </div>
-                  </div>
-                  {{/each}}
-                  <div class="col-12">
-                     <div class="clearfix">
-                        <div id="revenueAreaChart"></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-<!-- Behavior and conversions  end -->
 <!-- stats start -->
 <div class="stats-chart-wrapper">
    <div class="row row-xs clearfix">
@@ -279,10 +236,87 @@
    </div>
 </div>
 <!-- stats end -->
+<!-- Behavior and conversions Start -->
+<div class="charts-wrapper">
+   <div class="row row-xs clearfix">
+      <div class="col-xl-6">
+         <div class="card mg-b-20 website-interaction-metrics single-charts-wrapper">
+            <div class="card-body">
+                <div class="charts-wrapper-heading">
+                  <h6 class="tx-dark tx-uppercase mg-b-10 tx-16 tx-semibold tx-spacing-1">Website
+                     Interaction Metrics</h6>
+                  <p class="tx-12 mb-2 tx-gray-600">Track user behavior and engagement to gain valuable
+                     insights for improving your website. <a href="#">Learn More</a></p>
+                </div>
+               <div class="row">
+                  {{#each commonMetrics.metrics1}}
+                  <div class="col-sm-4 d-sm-flex align-items-center">
+                     <div class="media single-user-metrics d-flex align-items-center">
+                        <div
+                           class="icon wd-45 wd-md-50 ht-45 ht-md-50 card-icon-primary mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded">
+                           <i class="{{icon}} tx-primary tx-20"></i>
+                        </div>
+                        <div class="stats">
+                           <span class="tx-uppercase tx-10 tx-gray-500">{{title}}</span>
+                           <h4 class="tx-dark tx-20 mg-b-0 tx-rubik tx-normal"><span class="counter">{{value}}</span></h4>
+                        </div>
+                     </div>
+                  </div>
+                  {{/each}}
+                  <div class="col-12">
+                     <div class="clearfix">
+                        <div id="behaviorAreaChart"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-xl-6">
+         <div class="card mg-b-20 conversion-success single-charts-wrapper">
+            <div class="card-body">
+               <div class="charts-wrapper-heading">
+                  <h6 class="tx-dark tx-uppercase mg-b-10 tx-16 tx-semibold tx-spacing-1">Conversion Success
+                  </h6>
+                  <p class="tx-12 mb-2 tx-gray-600">Measure the effectiveness of your website in achieving
+                     desired actions, such as purchases, form submissions, or sign-ups. <a href="#">Learn
+                        More</a></p>
+               </div>
+            
+               <div class="row">
+                  {{#each commonMetrics.metrics2}}
+                  <div class="col-sm-4 d-sm-flex align-items-center">
+                     <div class="media mg-t-20 d-flex align-items-center justify-content-center single-conversion-metrics">
+                        <!--  {{#if isPositiveChange}}{{else}}{{/if}} -->
+                        <div
+                           class="icon card-icon-primary wd-45 wd-md-50 ht-45 ht-md-50  mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded">
+                           <i class="{{icon}} tx-primary tx-20"></i>
+                        </div>
+                        <div class="stats">
+                           <span class="tx-uppercase tx-10 tx-gray-500">{{title}}</span>
+                           <h4 class="tx-dark tx-20 mg-b-0 tx-rubik tx-normal"><span class="counter">{{value}}</span>
+                           </h4>
+                        </div>
+                     </div>
+                  </div>
+                  {{/each}}
+                  <div class="col-12">
+                     <div class="clearfix">
+                        <div id="revenueAreaChart"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Behavior and conversions  end -->
+
 <!-- Usage start  -->
 <div class="usage-chart-wrapper">
    <div class="row row-xs clearfix">
-      <div class="col-sm-12 col-xl-8">
+      <div class="col-sm-12 col-xl-12">
          <div class="card mg-b-20">
             <div class="card-header">
                <h4 class="card-header-title">
@@ -295,7 +329,7 @@
             </div>
             <div class="card-body pd-0 collapse show browser-by-users" id="browserUsedByUsers">
                <div class="table-responsive">
-                  <table class="table table-hover mg-0">
+                  <table id="browserByUsers" class="table table-hover mg-0">
                      <thead class="tx-10 tx-uppercase">
                         <tr>
                            <!-- <th class="wd-5p">&nbsp;</th> -->
@@ -321,41 +355,7 @@
             </div>
          </div>
       </div>
-      <div class="col-xl-4">
-         <div class="card mg-b-20">
-            <div class="card-header">
-               <h4 class="card-header-title">
-                  Visitors By Devices
-               </h4>
-               <div class="card-header-btn">
-                  <a href="" data-bs-toggle="collapse" class="btn card-collapse" data-bs-target="#visitorsDevices"
-                     aria-expanded="true"><i class="ion-ios-arrow-down"></i></a>
-               </div>
-            </div>
-            <div class="card-body pd-0 collapse show visitor-devices" id="visitorsDevices">
-               <div class="row no-gutters mg-x-15">
-                  {{#each deviceUsage.devices}}
-                  <div class="col-md-4 pd-t-10">
-                     <div class="media mg-t-20 single-device-stats">
-                        <div
-                           class="wd-40 wd-md-50 ht-40 ht-md-50 card-icon-primary mg-r-10 mg-md-r-10 d-flex align-items-center justify-content-center rounded">
-                           <i class="{{icon}} tx-{{color}} tx-20"></i>
-                        </div>
-                        <div>
-                           <span class="tx-uppercase tx-10 tx-gray-500">{{type}}</span>
-                           <h4 class="tx-20 tx-sm-18 tx-md-24 mg-b-0 tx-normal tx-rubik tx-dark"><span
-                                 class="counter">{{count}}</span></h4>
-                        </div>
-                     </div>
-                  </div>
-                  {{/each}}
-               </div>
-               <div class="clearfix">
-                  <div id="visitorsByDevices"></div>
-               </div>
-            </div>
-         </div>
-      </div>
+
    </div>
 </div>
 <!-- Usage end -->

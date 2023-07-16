@@ -2,29 +2,35 @@
     "metrics1":[
         {
             "title": "Click Through",
-            "value": "8,338"
+            "value": "8,338",
+            "icon": "fas fa-hand-pointer"
           },
           {
             "title": "Bounce Rate",
-            "value": "49.38%"
+            "value": "49.38%",
+            "icon": "fas fa-window-restore" 
           },
           {
             "title": "Avg. Session",
-            "value": "8,338"
+            "value": "8,338",
+            "icon": "fas fa-percent"
           }
     ],
     "metrics2": [
         {
           "title": "Transactions",
-          "value": "$45,938"
+          "value": "$45,938",
+          "icon": "fas fa-money-check"
         },
         {
           "title": "Revenue",
-          "value": "$5,338"
+          "value": "$5,338",
+          "icon": "fas fa-money-check-alt"
         },
         {
           "title": "Total Conversions",
-          "value": "$5,338"
+          "value": "$5,338",
+          "icon": "fas fa-money-bill"
         }
       ]
 }

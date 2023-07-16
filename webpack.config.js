@@ -44,6 +44,9 @@ const wPackConfig = {
   entry: {
     libs: [paths.src.scss + "/libs.scss"],
     theme: [paths.src.js + "/theme.js", paths.src.scss + "/theme.scss"],
+    dashboardCharts: [paths.src.js + "/dashboard-charts.js"],
+    calendarCustom:[paths.src.js + "/calendar-custom.js"],
+    datatablesCustom:[paths.src.js + "/datatables-custom.js"],
   },
   output: {
     filename: paths.dist.js + "/[name].bundle.js",
