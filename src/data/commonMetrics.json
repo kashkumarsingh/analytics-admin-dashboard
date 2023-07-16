@@ -1,0 +1,30 @@
+{
+    "metrics1":[
+        {
+            "title": "Click Through",
+            "value": "8,338"
+          },
+          {
+            "title": "Bounce Rate",
+            "value": "49.38%"
+          },
+          {
+            "title": "Avg. Session",
+            "value": "8,338"
+          }
+    ],
+    "metrics2": [
+        {
+          "title": "Transactions",
+          "value": "$45,938"
+        },
+        {
+          "title": "Revenue",
+          "value": "$5,338"
+        },
+        {
+          "title": "Total Conversions",
+          "value": "$5,338"
+        }
+      ]
+}

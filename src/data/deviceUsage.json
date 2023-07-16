@@ -1,0 +1,23 @@
+{
+    "devices": [
+      {
+        "icon": "fas fa-desktop",
+        "color": "primary",
+        "type": "Desktop",
+        "count": "5,958"
+      },
+      {
+        "icon": "fas fa-phone",
+        "color": "warning",
+        "type": "Mobile",
+        "count": "3,958"
+      },
+      {
+        "icon": "fas fa-cloud",
+        "color": "success",
+        "type": "Others",
+        "count": "2,958"
+      }
+    ]
+  }
+  

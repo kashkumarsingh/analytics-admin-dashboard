@@ -1,0 +1,170 @@
+{
+  "socialTraffic": [
+    {
+      "name": "Facebook",
+      "iconClass": "fab fa-facebook-f",
+      "value": "1,480",
+      "progress": {
+        "colorClass": "bg-primary",
+        "width": "85%"
+      }
+    },
+    {
+      "name": "Twitter",
+      "iconClass": "fab fa-twitter",
+      "value": "2,645",
+      "progress": {
+        "colorClass": "bg-indigo",
+        "width": "75%"
+      }
+    },
+    {
+      "name": "Google+",
+      "iconClass": "fab fa-google-plus",
+      "value": "4,807",
+      "progress": {
+        "colorClass": "bg-warning",
+        "width": "65%"
+      }
+    },
+    {
+      "name": "Instagram",
+      "iconClass": "fab fa-instagram",
+      "value": "3,678",
+      "progress": {
+        "colorClass": "bg-info",
+        "width": "85%"
+      }
+    },
+    {
+      "name": "Linkedin",
+      "iconClass": "fab fa-linkedin",
+      "value": "5,480",
+      "progress": {
+        "colorClass": "bg-teal",
+        "width": "95%"
+      }
+    },
+    {
+      "name": "Dribbble",
+      "iconClass": "fab fa-dribbble",
+      "value": "3,245",
+      "progress": {
+        "colorClass": "bg-danger",
+        "width": "65%"
+      }
+    }
+  ],
+  "adCampaigns": [
+    {
+      "name": "Google Ads",
+      "clicks": "3,712",
+      "conversions": "1,896",
+      "conversionRate": "22.18%",
+      "conversionRateChange": {
+        "arrowClass": "fa fa-arrow-up text-success",
+        "changePercentage": "46%"
+      },
+      "averageDuration": "00:03:52"
+    },
+    {
+      "name": "Instagram Ads",
+      "clicks": "1,876",
+      "conversions": "988",
+      "conversionRate": "32.45%",
+      "conversionRateChange": {
+        "arrowClass": "fa fa-arrow-up text-success",
+        "changePercentage": "38%"
+      },
+      "averageDuration": "00:04:55"
+    },
+    {
+      "name": "Twitter Ads",
+      "clicks": "1,342",
+      "conversions": "652",
+      "conversionRate": "28.36%",
+      "conversionRateChange": {
+        "arrowClass": "fa fa-arrow-up text-success",
+        "changePercentage": "46%"
+      },
+      "averageDuration": "00:05:42"
+    },
+    {
+      "name": "LinkedIn Ads",
+      "clicks": "1,098",
+      "conversions": "541",
+      "conversionRate": "24.89%",
+      "conversionRateChange": {
+        "arrowClass": "fa fa-arrow-down text-danger",
+        "changePercentage": "24%"
+      },
+      "averageDuration": "00:06:12"
+    },
+    {
+      "name": "Direct Traffic",
+      "clicks": "6,209",
+      "conversions": "3,485",
+      "conversionRate": "15.72%",
+      "conversionRateChange": {
+        "arrowClass": "fa fa-arrow-up text-success",
+        "changePercentage": "24%"
+      },
+      "averageDuration": "00:02:32"
+    },
+    {
+      "name": "Email",
+      "clicks": "3,524",
+      "conversions": "1,365",
+      "conversionRate": "27.23%",
+      "conversionRateChange": {
+        "arrowClass": "fa fa-arrow-down text-danger",
+        "changePercentage": "46%"
+      },
+      "averageDuration": "00:07:38"
+    }
+  ],
+  "browsers": [
+    {
+      "name": "Google Chrome",
+      "sessions": "13,410",
+      "bounceRate": "31.24% ( 39%)",
+      "avgDuration": "00:39:58",
+      "iconClass": "fa fa-arrow-up text-success"
+    },
+    {
+      "name": "Mozilla Firefox",
+      "sessions": "1,710",
+      "bounceRate": "31.24% ( 44%)",
+      "avgDuration": "00:37:19",
+      "iconClass": "fa fa-arrow-up text-success"
+    },
+    {
+      "name": "Apple Safari",
+      "sessions": "1,340",
+      "bounceRate": "31.24% ( 54%)",
+      "avgDuration": "00:28:18",
+      "iconClass": "fa fa-arrow-up text-success"
+    },
+    {
+      "name": "Microsoft Edge",
+      "sessions": "713",
+      "bounceRate": "31.24% ( 52%)",
+      "avgDuration": "00:17:42",
+      "iconClass": "fa fa-arrow-up text-success"
+    },
+    {
+      "name": "Opera",
+      "sessions": "380",
+      "bounceRate": "31.24% ( 45%)",
+      "avgDuration": "00:15:38",
+      "iconClass": "fa fa-arrow-up text-success"
+    },
+    {
+      "name": "Others",
+      "sessions": "1,523",
+      "bounceRate": "25.53% ( 21%)",
+      "avgDuration": "00:11:24",
+      "iconClass": "fa fa-arrow-up text-success"
+    }
+  ]
+}

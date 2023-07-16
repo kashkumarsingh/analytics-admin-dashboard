@@ -1,0 +1,51 @@
+        <!--================================-->
+         <!-- Notifications Dropdown Start -->
+         <!--================================-->
+         <li class="list-inline-item dropdown hidden-xs notifications">
+            <a class="notification-icon" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <i class="far fa-bell"></i>
+               <span class="notification-count wave in"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow-2 notifications-dropdown">
+               <!-- Top Notifications Area -->
+               <div class="top-notifications-area">
+                  <!-- Heading -->
+                  <div class="notifications-heading">
+                     <div class="heading-title">
+                        <h6>Notifications</h6>
+                     </div>
+                     <span>5+ New Notifications</span>
+                  </div>
+                  <div class="notifications-box" id="notificationsBox"
+                     style="overflow: hidden; width: auto; height: 260px;">
+
+                     <ul class="nav notifications-list">
+                        {{#each notifications.entries}}
+                        <li class="single-notification-item">
+                           <a class="dropdown-item list-group-item" href="javascript:void(0)">
+                              <div class="notification-content d-flex justify-content-between">
+                                  <div class="notitication-content-icon"><i class="{{icon}}"></i></div>
+                              </div>
+                              <!-- notification icon -->
+                              <div class="notification-content-description">
+                                  <div class="notification-content-heading">
+                                     <h6>{{title}}</h6>
+                                     <span>{{date}}</span>
+                                  </div>
+                                  <div class="notification-content-short-desc">
+                                      {{description}}
+                                  </div>
+                              </div>
+                           </a>
+                        </li>
+                        {{/each}}
+                     </ul>
+                  </div>
+                  <div class="notifications-footer">
+                     <a href="#">View all Notifications</a>
+                  </div>
+               </div>
+            </div>
+         </li>
+         <!--/ Notifications Dropdown End -->
+         <!--================================-->

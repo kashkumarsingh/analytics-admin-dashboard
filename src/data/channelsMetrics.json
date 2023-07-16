@@ -1,0 +1,45 @@
+{
+    "entries":[
+        {
+            "title": "New Users",
+            "goal": "65% goal reached",
+            "counter": "3,860",
+            "increase": "+351",
+            "progress": "70",
+            "progressWidthClass": "wd-70p",
+            "progressBarClass": "bg-success",
+            "isPositiveChange": true
+          },
+          {
+            "title": "Page Views",
+            "goal": "65% goal reached",
+            "counter": "64,530",
+            "increase": "+425",
+            "progress": "80",
+            "progressWidthClass": "wd-80p",
+            "progressBarClass": "bg-success",
+            "isPositiveChange": true
+
+          },
+          {
+            "title": "Page Seasion",
+            "goal": "65% goal reached",
+            "counter": "49.38%",
+            "increase": "-211",
+            "progress": "70",
+            "progressWidthClass": "wd-70p",
+            "progressBarClass": "bg-danger",
+            "isPositiveChange": false
+          },
+          {
+            "title": "Bounce Rate",
+            "goal": "65% goal reached",
+            "counter": "45.90%",
+            "increase": "+151",
+            "progress": "65",
+            "progressWidthClass": "wd-65p",
+            "progressBarClass": "bg-success",
+            "isPositiveChange": true
+          }
+    ]
+}

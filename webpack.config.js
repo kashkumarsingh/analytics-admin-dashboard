@@ -25,12 +25,14 @@ const paths = {
     imgs: "./src/assets/images",
     scss: "./src/assets/scss",
     fonts: "./src/assets/fonts",
+    webFonts:"./src/assets/webfonts",
     js: "./src/assets/js",
   },
   dist: {
     imgs: "./assets/images",
     css: "./assets/css",
     fonts: "./assets/fonts",
+    webFonts:"./assets/webfonts",
     js: "./assets/js",
   },
 };
@@ -153,6 +155,11 @@ const wPackConfig = {
         {
           from: paths.src.imgs,
           to: paths.dist.imgs,
+          noErrorOnMissing: true,
+        },
+        {
+          from: paths.src.webFonts,
+          to: paths.dist.webFonts,
           noErrorOnMissing: true,
         },
       ],

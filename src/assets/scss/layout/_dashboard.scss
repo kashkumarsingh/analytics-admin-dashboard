@@ -2,9 +2,18 @@
     margin-bottom: 2rem;
     .pageheader-left{
         h1{
-            font-size: 1rem;
+            font-size: 1.4rem;
             color:#5c5a5a;
+            @media only screen and (max-width:576px){
+                font-size: 1rem;
+            }
         }
+    }
+}
+@media only screen and (max-width :576px){
+    .pageheader {
+        margin-bottom: 2rem;
+        flex-flow: column nowrap;
     }
 }
 .metrics-chart{
@@ -29,6 +38,103 @@
                     .counter{font-size: 24px; margin-bottom: 0;}
                     .percentage{
                         font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+    .sessions-metrics{
+        .single-session-metrics{
+            margin-bottom: 1rem;
+            .title, .goal{
+                font-size: 14px;
+                margin-bottom: 0;
+                color:#2d2c2c;
+            }
+            
+            &:last-of-type{
+                margin-bottom: 0.7rem;
+            }
+            .progress{
+                height: .2rem;
+              
+                .progress-bar{
+                    width:70%;
+                }               
+            }
+        }
+
+    }
+}
+
+.charts-wrapper{
+    position: relative;
+    .single-charts-wrapper{
+          .card-body{
+            h6{
+                font-size: 1rem;
+                text-transform: uppercase;
+                margin-bottom: 0;
+            }
+          }
+          p{
+            font-size: 12px;
+            margin-bottom: 1rem;
+          }
+          .single-user-metrics,
+          .single-conversion-metrics{
+            gap:1rem;
+             .icon{
+                width:45px;
+                height: 45px;
+                background-color: #adb5bd;
+                &.card-icon-danger {
+                    color: #dc3545 !important;
+                    background: rgba(220, 53, 69, .10)!important;
+                }
+                &.card-icon-primary {
+                    color: #5d78ff !important;
+                    background: rgba(5, 88, 183, 0.10) !important;
+                }
+                &.card-icon-warning {
+                    color: #ffc107 !important;
+                    background: rgba(234, 147, 12, 0.1)!important;
+                }
+             }
+             .stats{
+                display: flex;
+                flex-flow: column wrap;
+                > span{
+                    font-size: 10px;
+                    text-transform: uppercase;
+                    color: #adb5bd;
+                    margin-bottom: 5px;
+                }
+                h4{
+                    font-size: 1rem;
+                    margin-bottom: 0;
+                    line-height: 1rem;
+                    span{
+                       font-size: 1.2rem; 
+                    }
+                    
+                }
+             }
+          }
+    }
+}
+
+.stats-chart-wrapper,
+.usage-chart-wrapper{
+    .card{
+        .card-body{
+            table{
+                tbody, thead{
+                    tr{
+                        font-size: 1rem;
+                        .progress{
+                            height:.2rem;
+                        }
                     }
                 }
             }

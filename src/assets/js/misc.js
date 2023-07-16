@@ -4,7 +4,7 @@ $(document).ready(function() {
     "use strict";
     
     // Options
-    var submenu_animation_speed = 100,
+  /*  var submenu_animation_speed = 100,
         submenu_opacity_animation = true, // set to "false" to remove opacity animation
         page_boxed = false,
         page_sidebar_fixed = true,
@@ -31,18 +31,20 @@ $(document).ready(function() {
             $('body').addClass('page-header-fixed');
         };
     };
+
+    */
     
     
     // Sidebar
     var page_sidebar_init = function() {
         
         // Slimscroll
-        $('.page-sidebar-inner').slimScroll({
+        $('.page-sidebar__navigation').slimScroll({
             height: '100%'
         }).mouseover();  
         
         // Fixed Sidebar
-        var fixed_sidebar = function() {
+        /*var fixed_sidebar = function() {
             if((body.hasClass('page-sidebar-fixed'))&&(page_sidebar_fixed === false)) {
                 page_sidebar_fixed = true;
             };
@@ -131,11 +133,12 @@ $(document).ready(function() {
         fixed_sidebar();
         collapsed_sidebar();
         small_screen_sidebar();
+        */
     };
     
         
     // Accordion menu
-    var accordion_menu = function() {
+    /*var accordion_menu = function() {
         
         var select_sub_menus = $('.page-sidebar li:not(.open) .sub-menu'),
             active_page_sub_menu_link = $('.page-sidebar li.active-page > a');
@@ -203,12 +206,12 @@ $(document).ready(function() {
             active_page_sub_menu_link.click();
         };
     };
-
+*/
 
     
     page_sidebar_init();
-    boxed_page();
-    accordion_menu();
+    //boxed_page();
+    //accordion_menu();
     // navbar_init();
     // right_sidebar();
     // plugins_init();
@@ -217,25 +220,25 @@ $(document).ready(function() {
 
 
 // Collapsed Sidebar (min-width:992px) and (max-width: 1199px)
- $(function(){
+//  $(function(){
  
-   'use strict'
+//    'use strict'
  
-   var mql = window.matchMedia('(min-width:992px) and (max-width: 1199px)');
+//    var mql = window.matchMedia('(min-width:992px) and (max-width: 1199px)');
  
-   function doMinimize(e) {
-     if (e.matches) {
-       $('body').addClass('page-sidebar-collapsed');
-     } 
-	 else {
-       $('body').removeClass('page-sidebar-collapsed');
-     }
-   }
+//    function doMinimize(e) {
+//      if (e.matches) {
+//        $('body').addClass('page-sidebar-collapsed');
+//      } 
+// 	 else {
+//        $('body').removeClass('page-sidebar-collapsed');
+//      }
+//    }
  
-   mql.addListener(doMinimize);
-  doMinimize(mql);
+//    mql.addListener(doMinimize);
+//   doMinimize(mql);
 
-})
+// })
 
 
 

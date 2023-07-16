@@ -1,27 +1,46 @@
 <div class="page-sidebar">
-    <div class="logo">
-       <a class="logo-img" href="index.html">		
-       <img class="desktop-logo" src="assets/images/logo.png" alt="">
-       <img class="small-logo" src="assets/images/small-logo.png" alt="">
-       </a>			
-       <i class="fas fa-close" id="sidebar-toggle-button-close"></i>
-    </div>
-    <!--================================-->
-    <!-- Sidebar Menu Start -->
-    <!--================================-->
-    <div class="page-sidebar-inner">
-       <div class="page-sidebar-menu">
-          <ul class="accordion-menu">
-             <li class="open active">
-                <a href="index.html"><i class="fas fa-home"></i>
-                <span>Dashboard</span></a>
-             </li>
-       </div>
-    </div>
-    <!--/ Sidebar Menu End -->
-    <!--================================-->
-    <!-- Sidebar Footer Start -->
-    <!--================================-->
-    <div class="sidebar-footer d-none">Footer here</div>
-    <!--/ Sidebar Footer End -->
- </div>
+   <div class="offcanvas offcanvas-start" tabindex="-1" id="toggleNavigation" data-bs-scroll="true"
+      aria-labelledby="offcanvasExampleLabel">
+      <!-- offcanvas header start -->
+      <div class="offcanvas-header">
+         <div class="page-sidebar__logo d-flex align-items-center justify-content-between">
+            <a href="index.html">
+               <img src="assets/images/logo.png" class="img-fluid" alt="page-logo">
+            </a>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive"
+               aria-label="Close">
+               <i class="fas fa-close"></i>
+            </button>
+         </div>
+      </div>
+      <!-- /offcanvas header end-->
+      <div class="offcanvas-body">
+         <!-- Sidebar Menu Start -->
+         <div class="page-sidebar__navigation">
+            <ul class="nav page-sidebar__accordion">
+               <li class="nav-item page-sidebar_accordion-item active">
+                  <a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
+               </li>
+               <li class="nav-item page-sidebar_accordion-item">
+                  <a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
+               </li>
+               <li class="nav-item page-sidebar_accordion-item">
+                  <a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
+               </li>
+               <li class="nav-item page-sidebar_accordion-item">
+                  <a href="index.html" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
+               </li>
+            </ul>
+         </div>
+         <!--/ Sidebar Menu End -->
+
+      </div>
+      <!-- offcanvas body -->
+      <div class="offcanvas-footer">
+
+      </div>
+      <!-- offcanvas footer -->
+   </div>
+
+</div>
+<!-- Sidebar Canvas -->
